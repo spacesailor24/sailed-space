@@ -63,7 +63,7 @@ To help solve this issue of communication between Web2 and Ethereum, the EVM has
 
 Under the hood, emitting events in Solidity instructs the EVM to execute one of the following opcodes: `LOG0`, `LOG1`, `LOG2`, `LOG3`, or `LOG4` (You can view their details [here](https://www.evm.codes/#a0?fork=shanghai)). When an event is emitted, the `LOG` opcode generates a log entry that includes the address of the contract that emitted the event, an array of topics, and some amount of data. Topics come from `indexed` parameters of the event, and each `LOG` opcode has a corresponding number that denotes the number of topics it can handle (from 0 - 4). The `data` property of the log comes from non-indexed event parameters, and the restrictions of how much data can be logged are the **gas cost** of storing the data (currently 8 gas for each byte of data + some other values shown in the images below), and the **block's gas limit** (even if you were willing to pay for a lot of gas to be used to store your data, it is very possible that your transaction can exceed the total amount of gas allowed to be used in the current block - especially when you consider your transaction may not be the only transaction using the block's gas allowance).
 
-!\[\[solidityEventsAndWeb3js 1.svg]]
+<figure><img src=".gitbook/assets/solidityEventsAndWeb3js 1.png" alt=""><figcaption><p>LOG EVM Opcode Documentation</p></figcaption></figure>
 
 When a `LOG` instruction is executed, the generated log entry is stored in the transaction context within the EVM, this is a temporary space used by the EVM to process a transaction before it's finalized. This transaction context holds information about the transaction currently being processed, including any changes made to the state, and any log entries generated. Once the transaction has been processed by the EVM and is ready to be included in the blockchain, a transaction receipt is created. This receipt is a summary of the transaction's execution, including the status, gas used, and logs generated.
 
@@ -115,7 +115,9 @@ Solidity events do support data types with values that can exceed this `32` byte
 
 The above transaction receipt is the result of a transaction that interacted with the `transfer` function of the Dai Stablecoin contract. We know this because the `to` address specified by the transaction is a verified contract on Etherscan for Ethereum mainnet:
 
-!\[\[verifiedDaiContractAddress.svg]]
+
+
+<figure><img src=".gitbook/assets/verifiedDaiContractAddress.png" alt=""><figcaption><p>Verified Dai Stablecoin Address</p></figcaption></figure>
 
 If we take a look at the [verified contract code](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f#code) for this contract, we can see that on line `95`, an event with the name `Transfer` is declared:
 
@@ -163,17 +165,17 @@ Transfer(address,address,uint256)
 
 Now Solidity performs the hashing of the stripped event signature to generate our expected topic value. Using this [online keccak256 hashing function](https://emn178.github.io/online-tools/keccak\_256.html), you can see that hashing the stripped event signature does indeed give us the expected value we see as the first element in our log's `topics` array
 
-!\[\[hashedEventSignature.svg]]
+<figure><img src=".gitbook/assets/hashedEventSignature.png" alt=""><figcaption><p>Keccak256 Hash of the Transfer Event Signature</p></figcaption></figure>
 
 #### Remaining Event Topics
 
 So, we've got the first element in our log's `topics` array figured out, what about the next two? Well we covered that the `topics` array contains `indexed` event parameters, so the other topics are `src` and `dst`, but where do these values come from? Well when we look at the [transaction receipt](https://etherscan.io/tx/0x81b886145c37afe0e42353e81f8f2896dd69fb86531a6d2ee9a13ced4d9321fb) on Etherscan, and click the **+ Click to show more** button, we can see the **Input Data** for this transaction:
 
-!\[\[inputData.svg]]
+<figure><img src=".gitbook/assets/inputData.png" alt=""><figcaption><p>Dai Stablecoin Transfer Input Data</p></figcaption></figure>
 
 Clicking the **Decode Input Data** button yields us a more digestible version of this input data:
 
-!\[\[decodedInput.svg]]
+<figure><img src=".gitbook/assets/decodedInput.png" alt=""><figcaption><p>Decoded Dai Stablecoin Transfer Input Data</p></figcaption></figure>
 
 This is the data provided by the user whom submitted this transaction to Ethereum. As you can see, this transaction is calling the `transfer` function on the Dai Stablecoin contract with the data: `0xfF07E558075bAc7b225A3FB8dD5f296804464cc1` as the `dst` parameter, and `120000000000000000000` as the `wad` parameter.
 
@@ -557,7 +559,7 @@ Well a straightforward solution that Ethereum has chosen to utilize is to use he
 
 Putting the above together into a single line we get: `537570657220696d706f7274616e7420737472696e67`. A keen eye will notice that this combination of hexadecimal bytes is actually present in the ABI encoded data we're building up to:
 
-!\[\[encodedStringData.svg]]
+<figure><img src=".gitbook/assets/encodedStringData.svg" alt=""><figcaption><p>Encoded String Event Data</p></figcaption></figure>
 
 So if we have found our ABI encoded string, what's the rest of the data there for? Well the EVM was built to work with `32` byte chunks of data, also called **words**. If you recall back to the beginning of the **Ethereum Log Topics** section, each event topic is also `32` byte words. So lets take the complete ABI encoding of our string and break it into these `32` bytes words:
 
@@ -634,7 +636,7 @@ When `emitMyString` is called, our event log will actually look like:
 
 Where `8415478cebd2e698dbda720fc2a07faf3d46dc907f1cc27ccd5cbc61609eea21` is the hash of `Super important string`:
 
-!\[\[hashOfIndexedString.svg]]
+<figure><img src=".gitbook/assets/hashOfIndexedString.svg" alt=""><figcaption><p>Keccak-256 Hash of String</p></figcaption></figure>
 
 #### **The Caveat of Using `indexed` Strings**
 
@@ -1285,7 +1287,7 @@ Some other differences between the above code and the code for fetching past eve
 
 You can see how web3.js is able to piece together the correct `Transfer` event signature by taking each `type` for each input from `inputs` with the `name` of the event. You may be wondering how I found the ABI for the Dai contract, and while there are multiple ways to obtain the ABI for a contract, because the Dai contract is verified on Etherscan, on the [Contract Code page](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f#code) you will find the `Contract ABI` section where I copied the ABI from:
 
-!\[\[Pasted image 20230626131038.png]]
+<figure><img src=".gitbook/assets/daiContractAbi.png" alt=""><figcaption><p>Dai Stablecoin Verified Application Binary Interface</p></figcaption></figure>
 
 * We're instantiating an instance of `Contract` - As mentioned in the previous section, you could remove the `address` property to fetch past events for any transaction that emitted a `Transfer` event instead of those that only interacted with the Dai contract. However, that is not possible with this code example because we're instantiating an instance of web3.js' `Contract` class specifically for the Dai contract since we're using `DAI_ABI` and `DAI_VERIFIED_ADDRESS`. So, we'll only receive event logs for `Transfer` events from the Dai contract, all other `Transfer` event logs from other contracts will be ignored.
 
