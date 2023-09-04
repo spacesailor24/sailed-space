@@ -1,4 +1,4 @@
-# 🛣 The Node Less Traveled: The Road to Ethereum Independence
+# 🛣 The Node Less Traveled By: The Road to Ethereum Independence
 
 ## Phase 1: Hardware
 
@@ -90,7 +90,9 @@ The first step in assembling our node is to unscrew the bottom cover of the NUC.
 <figure><img src=".gitbook/assets/IMG_4505.png" alt=""><figcaption><p>Unscrew the four highlighted screws to remove the bottom cover of the NUC</p></figcaption></figure>
 
 {% hint style="info" %}
-**Note:** We're going to remove the bottom cover of the NUC, but **be careful** when you do so because there is a _ribbon cable_ attached to the bottom cover (see the below image to see what this ribbon cable looks like) that you don't want to accidentally rip apart if you remove the bottom cover a bit too vigorously 💪 Although the first time you remove this bottom cover, it might be a bit stiff so it might require just a _little bit_ of _umph -_ You'll figure it out though, I believe in you 🙂 (plus we don't use the ribbon cable, so if you accidentally damage it, it's not the end of your node)
+**Note:** We're going to remove the bottom cover of the NUC, but **be careful** when you do so because there is a _ribbon cable_ attached to the bottom cover (see the below image to see what this ribbon cable looks like) that you don't want to accidentally rip apart if you remove the bottom cover a bit too vigorously 💪&#x20;
+
+The first time you remove this bottom cover, it might be _a bit_ stiff so it might require just a _little bit_ of _umph -_ You'll figure it out though, I believe in you 🙂 (plus we don't use the ribbon cable, so if you accidentally damage it, it's not the end of your node)
 {% endhint %}
 
 Next we're going to open up the NUC by removing the bottom cover. To do so, hold onto the NUC with one hand and pull up using one of the screw with the other hand. Once you seperate the bottom cover from the rest of the NUC, carefully place it off to the side like so:
