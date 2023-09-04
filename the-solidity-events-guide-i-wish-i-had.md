@@ -28,34 +28,34 @@ To help solve this issue of communication between Web2 and Ethereum, the EVM has
 
 ### Table of Contents
 
-* Logging in Ethereum
-* Ethereum Log Topics
-  * Named Events
-    * Event Signature
-  * Remaining Event Topics
-    * And What About the Missing `wad` Parameter?
-  * Anonymous Events
-    * Use Cases
-      * Additional Custom Indexed Parameter
-      * Gas Savings
-      * Obfuscation
-    * Caveats
-      * Difficulty Filtering Transactions
-      * Event Impersonation
-  * What Happened to My `indexed` String?
-    * An Aside About ABI Encoding
-    * Why So Much Data to Represent our `22` Byte String?
-    * What Actually Happens to `indexed` Strings
-    * The Caveat of Using `indexed` Strings
-* Event Data
-  * Emitting No Data
-  * Emitting Values Types
-  * Emitting Reference Types
-  * Emitting Value and Reference Types
-* Retrieving Past USDC Transfer Event Logs Using Web3.js
-* Listening to New USDC Transfer Events Using Web3.js
-* Listening to Your Contract's Events Using Web3.js
-* References
+* [Logging in Ethereum](the-solidity-events-guide-i-wish-i-had.md#logging-in-ethereum)
+* [Ethereum Log Topics](the-solidity-events-guide-i-wish-i-had.md#ethereum-log-topics)
+  * [Named Events](the-solidity-events-guide-i-wish-i-had.md#named-events)
+    * [Event Signature](the-solidity-events-guide-i-wish-i-had.md#event-signature)
+  * [Remaining Event Topics](the-solidity-events-guide-i-wish-i-had.md#remaining-event-topics)
+    * [And What About the Missing `wad` Parameter?](the-solidity-events-guide-i-wish-i-had.md#and-what-about-the-missing-wad-parameter)
+  * [Anonymous Events](the-solidity-events-guide-i-wish-i-had.md#anonymous-events)
+    * [Use Cases](the-solidity-events-guide-i-wish-i-had.md#use-cases)
+      * [Additional Custom Indexed Parameter](the-solidity-events-guide-i-wish-i-had.md#additional-custom-indexed-parameter)
+      * [Gas Savings](the-solidity-events-guide-i-wish-i-had.md#gas-savings)
+      * [Obfuscation](the-solidity-events-guide-i-wish-i-had.md#obfuscation)
+    * [Caveats](the-solidity-events-guide-i-wish-i-had.md#caveats)
+      * [Difficulty Filtering Transactions](the-solidity-events-guide-i-wish-i-had.md#difficulty-filtering-transactions)
+      * [Event Impersonation](the-solidity-events-guide-i-wish-i-had.md#event-impersonation)
+  * [What Happened to My `indexed` String?](the-solidity-events-guide-i-wish-i-had.md#what-happened-to-my-indexed-string)
+    * [An Aside About ABI Encoding](the-solidity-events-guide-i-wish-i-had.md#an-aside-about-abi-encoding)
+    * [Why So Much Data to Represent our `22` Byte String?](the-solidity-events-guide-i-wish-i-had.md#why-so-much-data-to-represent-our-22-byte-string)
+    * [What Actually Happens to `indexed` Strings](the-solidity-events-guide-i-wish-i-had.md#what-actually-happens-to-indexed-strings)
+    * [The Caveat of Using `indexed` Strings](the-solidity-events-guide-i-wish-i-had.md#the-caveat-of-using-indexed-strings)
+* [Event Data](the-solidity-events-guide-i-wish-i-had.md#event-data)
+  * [Emitting No Data](the-solidity-events-guide-i-wish-i-had.md#emitting-no-data)
+  * [Emitting Values Types](the-solidity-events-guide-i-wish-i-had.md#emitting-values-types)
+  * [Emitting Reference Types](the-solidity-events-guide-i-wish-i-had.md#emitting-reference-types)
+  * [Emitting Value and Reference Types](the-solidity-events-guide-i-wish-i-had.md#emitting-value-and-reference-types)
+* [Retrieving Past DAI Transfer Event Logs Using Web3.js](the-solidity-events-guide-i-wish-i-had.md#retrieving-past-dai-transfer-event-logs-using-web3.js)
+* [Listening to New DAI Transfer Events Using Web3.js](the-solidity-events-guide-i-wish-i-had.md#listening-to-new-dai-transfer-events-using-web3.js)
+* [Listening to Your Contract's Events Using Web3.js](the-solidity-events-guide-i-wish-i-had.md#listening-to-your-contracts-events-using-web3.js)
+* [References](the-solidity-events-guide-i-wish-i-had.md#references)
 
 ***
 
@@ -135,7 +135,7 @@ topics: [
 
 you can see that we have `3` topics, when our event only defines 2 `indexed` parameters, so what's the third topic? Well in Solidity, when events are given a name like `Transfer`, Solidity takes the **event signature**, hashes it using the keccak256 hashing algorithm, and appends it to the `topics` array as the first element. So in our `topics` array, `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef` is the hash of the event signature of our `Transfer` method. To further demonstrate this idea, lets follow the process Solidity takes to generate the hash of our event signature. Firstly, what's an event signature?
 
-**Event Signature**
+#### Event Signature
 
 In Solidity, an event signature is a unique identifier for an event, generated from the event's name and its parameter types. For our `Transfer` event, this means line `95` of the verified contract code of the Dai Stablecoin contract:
 
@@ -245,7 +245,7 @@ But why do the `src` and `dst` values look different than the values we passed w
 
 Addresses are only `20` bytes long, so these values get padded with `0`s so that they become `32` bytes long (which is the length every event topic must be).
 
-**And What About the Missing `wad` Parameter?**
+#### And What About the Missing wad Parameter?
 
 Maybe you noticed that when we emit the `Transfer` event on line `135`, we're passing values for the `src`, `dst`, and `wad` event parameters, but only `src` and `dst` show up in the `topics` array for the log - what happened to the `wad` parameter? Well taking a look at the event signature for `Transfer`:
 
@@ -347,7 +347,7 @@ And if `AnonymousEventWithParameter` was emitted:
 
 #### Use Cases
 
-**Additional Custom Indexed Parameter**
+#### **Additional Custom Indexed Parameter**
 
 Because the EVM currently only supports the opcodes `LOG0-4`, an event log can only have up to four `topics`. For named events, the first topic is reserved for the hashed event signature, leaving room for only `3` custom `indexed` parameters. If an event is declared `anonymous`, the hashed signature is not logged, leaving room for one extra `indexed` parameter. This can be useful in specific scenarios where more than `3` parameters need to be indexed.
 
@@ -371,7 +371,7 @@ event AnonymousEventWithFourParameters(uint256 indexed one, uint256 indexed two,
 }
 ```
 
-**Gas Savings**
+#### **Gas Savings**
 
 Because the event signature is not store in the log, you could reduce the gas cost of emitting an event. For example, if your contract had a limited number of events that could easily be distinguished by the number of event topics like so:
 
@@ -414,7 +414,7 @@ event HasThreeTopics(uint256 indexed one, uint256 indexed two, uint256 indexed t
 
 Some, albeit a very small amount, gas can be saved because we can rely on `logs[].topics.length` to discern which anonymous event was emitted.
 
-**Obfuscation**
+#### **Obfuscation**
 
 Anonymous events can make it harder for someone examining the blockchain to determine what kind of event was emitted, as the event signature isn't included in the log. This could be seen as a way to obfuscate the actions of a contract, although it should be noted that it's generally considered best practice for smart contracts to be transparent in their operations.
 
@@ -468,11 +468,11 @@ Not that this is a concrete example, but it goes to show a potential use case of
 
 #### Caveats
 
-**Difficulty Filtering Transactions**
+#### **Difficulty Filtering Transactions**
 
 Probably the biggest deficiency of anonymous events is that it makes it difficult to filter transactions using them. As discussed in the above **Obfuscation** example, how would you be able to filter transaction that only update the secret and emit the `SuperSecret` event? You wouldn't be able to without some additional knowledge of the contract that isn't apparent by just looking at the transaction receipt. You can, however, work around this limitation as discussed in the **Gas Savings** section, that uses different number of event topics to discern the different events.
 
-**Event Impersonation**
+#### **Event Impersonation**
 
 Also depicted in the **Obfuscation** section, without the hash of the event signature acting as an event log's unique identifier, `anonymous` events with the same event parameters are identical in structure when they are logged. So, it could _look_ like a `SuperSecret` event was emitted, but in actuality, all the events could be `Decoy` events and you'd have no way of telling. This could be dangerous if a specific `anonymous` event is being relied on to perform some off-chain action, and a _fake_ event with the same indexed event parameters is emitted instead.
 
@@ -506,7 +506,7 @@ Now when we call this `emitMyString` function, you're probably expecting to see 
 
 Well...maybe you weren't expecting that because that's not our string, `Super important string`
 
-**An Aside About ABI Encoding**
+#### **An Aside About ABI Encoding**
 
 So if we emitted, `Super important string` as our `string` value, why would we expect to see this monstrosity, and not just `Super important string`?
 
@@ -575,7 +575,7 @@ Excluding the `0x` at the beginning of the data (which is just a prefix to denot
 
 So to summarize, our giant data blob is telling the EVM: We have some data that _may_ not fit into a single `32` byte EVM word. This data begins `32` bytes from the beginning of this data blob, this data is `22` bytes long, and then finally it gives the EVM the data to parse and using the information we gave it, so it parse 22 `bytes` and gets our hexadecimal UTF-8 string.
 
-**Why So Much Data to Represent our `22` Byte String?**
+#### **Why So Much Data to Represent our `22` Byte String?**
 
 You may be wondering why we need the first 2 EVM words to understand our hexadecimal encoded string. Well this is because `string`s can have an indeterminate length. Other values such as `uint`s and `int`s can fit into `32` byte EVM words because the maximum length of these values is `32` bytes (e.g. a `uint256` is `256` bits long, `256` bits is `32` bytes (`8` bits = `1` byte, so `256` / `8` = `32`)).
 
@@ -602,7 +602,7 @@ Now if this is all the EVM had to work with, it would assume each `32` byte word
 
 So to avoid splitting our `string`s into multiple words based on every `32` bytes, we tell the EVM where our `string` data begins, and how many bytes it is. In the case of `supercalifragilisticexpialidocious`, the second EVM word says it's `34` bytes long (`0x22` = `34`), so the EVM parses the next `34` bytes as our string data (which is the entire `32` bytes of the third word, and `2` bytes of the fourth EVM word).
 
-**What Actually Happens to `indexed` Strings**
+#### **What Actually Happens to `indexed` Strings**
 
 Well we know that event `topics` must be `32` bytes long, but `string`s can be a length that exceeds `32` bytes, so what happens when you emit an event with a `indexed` string parameter? Put simply, we use the keccak256 hash of the string value and use that as the `topic`. This is possible because keccak256 hashes are **always** `32` bytes long, so this strategy will always work, regardless of how long our string data is.
 
@@ -636,7 +636,7 @@ Where `8415478cebd2e698dbda720fc2a07faf3d46dc907f1cc27ccd5cbc61609eea21` is the 
 
 !\[\[hashOfIndexedString.svg]]
 
-**The Caveat of Using `indexed` Strings**
+#### **The Caveat of Using `indexed` Strings**
 
 While it's still very much possible to filter transactions using the hash of the original `indexed` string data, only having the hash won't be very helpful if you need to use the original string data somewhere such as displaying it in your dApp. There is a convenient workaround for this though, by not using `indexed` for you string event parameter, the emitted string data will be ABI encoded and will be available under the event log's `data` property (`logs[].data`):
 
