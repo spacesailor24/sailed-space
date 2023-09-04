@@ -9,9 +9,7 @@
 
 ### Gather All the Things
 
-<figure><img src=".gitbook/assets/everything-rotated.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/IMG_4496.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/everything-rotated.png" alt=""><figcaption><p>All of our boxed components</p></figcaption></figure>
 
 Pictured above are the hardware components needed to setup our node:
 
@@ -33,7 +31,7 @@ Aside from what's pictured above, we need two more items: A small screwdriver an
 **Note:** All of the data on the USB is going to be erased, please use a new USB or one that doesn't contain **any** data you care about
 {% endhint %}
 
-<figure><img src=".gitbook/assets/screwDriveAndUsb.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/screwDriveAndUsb.png" alt=""><figcaption><p>A USB and a small screwdriver</p></figcaption></figure>
 
 ### Unbox All the Things
 
