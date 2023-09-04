@@ -1,10 +1,5 @@
 # 🛣 The Node Less Traveled: The Road to Ethereum Independence
 
-* Unboxing Your New Intel NUC and Components
-* Flashing Ubuntu Server onto a USB
-  * Downloading Ubuntu Server ISO
-  * Installing Balena Etcher
-
 ## Phase 1: Hardware
 
 ### Gather All the Things
@@ -84,10 +79,56 @@ Included in the box is:
 
 ### Assemble All the Things
 
-## Unboxing Your Node
+#### Opening Up the NUC
 
-* Screws won't come completely out of NUC
-* Be careful when removing the bottom plate of the NUC
-  * Will require a little bit of force to pull off the plate, but there's a ribbon cable attached to both the plate and the motherboard of the NUC, so don't pull too hard
-* Installing the RAM might feel like you're going to snap it or something, but just push the gold side into the slot until it snaps in, and then push the RAM down in the bracket
-* Installing the SSD involves removing a small screw, slot the gold side into the slot, and then lightly push down on the SSD so you can screw the screw back in to hold the SSD
+The first step in assembling our node is to unscrew the bottom cover of the NUC. Pictured below is the bottom of the NUC with the four screws we need to unscrew highlighted by the red squares:
+
+{% hint style="info" %}
+**Note:** The four screw are _captured,_ meaning they're not going to come out of their holes no matter how much you unscrew them. When they become loose and you can move the screw up and down, that's how you'll know it's completely unscrewed
+{% endhint %}
+
+<figure><img src=".gitbook/assets/IMG_4505.png" alt=""><figcaption><p>Unscrew the four highlighted screws to remove the bottom cover of the NUC</p></figcaption></figure>
+
+{% hint style="info" %}
+**Note:** We're going to remove the bottom cover of the NUC, but **be careful** when you do so because there is a _ribbon cable_ attached to the bottom cover (see the below image to see what this ribbon cable looks like) that you don't want to accidentally rip apart if you remove the bottom cover a bit too vigorously 💪 Although the first time you remove this bottom cover, it might be a bit stiff so it might require just a _little bit_ of _umph -_ You'll figure it out though, I believe in you 🙂 (plus we don't use the ribbon cable, so if you accidentally damage it, it's not the end of your node)
+{% endhint %}
+
+Next we're going to open up the NUC by removing the bottom cover. To do so, hold onto the NUC with one hand and pull up using one of the screw with the other hand. Once you seperate the bottom cover from the rest of the NUC, carefully place it off to the side like so:
+
+<figure><img src=".gitbook/assets/IMG_4506.png" alt=""><figcaption><p>An opened up NUC</p></figcaption></figure>
+
+#### Installing the RAM
+
+<figure><img src=".gitbook/assets/IMG_4507.png" alt=""><figcaption><p>The RAM slots highlighted by a red rectangle</p></figcaption></figure>
+
+Highlighted in the above image are the slots we're going to insert our RAM into. This part is going to _feel_ like you're going to break something, but it does require _a little bit_ of effort to full push the RAM into it's slot. You're also going to be inserting the RAM at a _slight_ angle and then you'll push it down into the silver bracket (highlighted in the below image) that'll hold the stick of RAM on it's sides
+
+Insert the **gold side** of the first stick (or your only stick if you only have one stick) of RAM into the **bottom** slot. The **gold side** of the RAM will have a small section missing from it, this gap lines up with a solid piece in the slot we're sticking the RAM into. Make sure your stick of RAM is correctly orientated and the gap in the stick lines up with the solid piece in the slot before trying to push the stick into the slot (otherwise you'll damage the stick of RAM)
+
+Once you've inserted the stick of RAM, it'll look like:
+
+<figure><img src=".gitbook/assets/IMG_4508.png" alt=""><figcaption><p>The first slotted stick of RAM, highlighted is the bracket that holds the stick of RAM by it's sides</p></figcaption></figure>
+
+If you have a second stick of RAM, insert it in the top slot same as you did the first one (also making sure to push down slightly on the stick to push in into the bracket):
+
+<figure><img src=".gitbook/assets/IMG_4509.png" alt=""><figcaption><p>The second stick of RAM slotted into it's place</p></figcaption></figure>
+
+#### Installing the SSD
+
+<figure><img src=".gitbook/assets/IMG_4510.png" alt=""><figcaption><p>The SSD slot highlighted by a red rectangle</p></figcaption></figure>
+
+Next, and the last step before we close up the NUC, we're installing our SSD. To do so, there's a small screw we need to remove first - I've highlighted the screw in the above image, please completely unscrew it and set it off to the side
+
+After completely removing the screw, insert your SSD **gold side** first into it's slot. Like the RAM, there's a small gap in the **gold side** that aligns with a solid piece in the slot. Please make sure you're lining up the gap with the solid piece before trying to insert the SSD
+
+<figure><img src=".gitbook/assets/IMG_4511.png" alt=""><figcaption><p>The SSD inserted into it's slot</p></figcaption></figure>
+
+As you can see in the above picture, the SSD is going to be at a weird angle after inserting and that's completely fine. The tiny screw we removed is going to hold down the SSD
+
+Please reinsert the tiny screw into it's hole, making sure it's holding down the SSD by the **gold half circle** that lines up with the screw hole. After reinserting the screw, it should look like:
+
+<figure><img src=".gitbook/assets/IMG_4512.png" alt=""><figcaption><p>A NUC with the RAM and SSD slotted into their places</p></figcaption></figure>
+
+#### Batten Down the Hatches
+
+Now that we've installed the RAM and the SSD, it's time to screw the bottom cover back on, completing our assembly of our node, congrats 🎉
