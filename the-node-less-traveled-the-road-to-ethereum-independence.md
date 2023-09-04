@@ -9,6 +9,8 @@
 
 ### Gather All the Things
 
+<figure><img src=".gitbook/assets/everything-rotated.png" alt=""><figcaption></figcaption></figure>
+
 <figure><img src=".gitbook/assets/IMG_4496.png" alt=""><figcaption></figcaption></figure>
 
 Pictured above are the hardware components needed to setup our node:
@@ -83,8 +85,6 @@ Included in the box is:
 <figure><img src=".gitbook/assets/IMG_4504.png" alt=""><figcaption><p>All of our unboxed components: NVME SSD, two sticks of RAM, the Intel NUC, and it's power supply</p></figcaption></figure>
 
 ### Assemble All the Things
-
-
 
 ## Unboxing Your Node
 
