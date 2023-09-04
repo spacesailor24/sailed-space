@@ -4,7 +4,7 @@ cover: >-
 coverY: -56
 ---
 
-# The Solidity Events Guide I Wish I Had
+# 📄 The Solidity Events Guide I Wish I Had
 
 > Welcome to the grand odyssey of Web3, a journey from the familiar shores of Web2 towards the vast ocean of the Ethereum blockchain. Web2, the mainland we've known and navigated for years, is brimming with data cities and information highways. But an exciting adventure beckons us beyond, towards the open sea of decentralization.
 >
