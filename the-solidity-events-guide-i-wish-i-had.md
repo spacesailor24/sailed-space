@@ -1,7 +1,6 @@
 ---
-cover: >-
-  https://images.unsplash.com/photo-1636333798006-993a9f2611e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwxfHxtZXNzYWdlJTIwaW4lMjBhJTIwYm90dGxlfGVufDB8fHx8MTY4OTQwMTUyMnww&ixlib=rb-4.0.3&q=85
-coverY: -56
+cover: .gitbook/assets/message-bottle Large.jpeg
+coverY: 0
 ---
 
 # 📄 The Solidity Events Guide I Wish I Had

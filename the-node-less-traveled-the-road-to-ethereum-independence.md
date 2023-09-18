@@ -4,7 +4,7 @@
 
 ### Gather All the Things
 
-<figure><img src=".gitbook/assets/everything-rotated Large.png" alt=""><figcaption><p>All of our boxed components</p></figcaption></figure>
+<figure><img src=".gitbook/assets/everything-rotated Large.jpeg" alt=""><figcaption><p>All of our boxed components</p></figcaption></figure>
 
 Pictured above are the hardware components needed to setup our node:
 
@@ -26,13 +26,13 @@ Aside from what's pictured above, we need two more items: A small screwdriver an
 **Note:** All of the data on the USB is going to be erased, please use a new USB or one that doesn't contain **any** data you care about
 {% endhint %}
 
-<figure><img src=".gitbook/assets/screwDriveAndUsb Large.png" alt=""><figcaption><p>A USB and a small screwdriver</p></figcaption></figure>
+<figure><img src=".gitbook/assets/screwDriveAndUsb Large.jpeg" alt=""><figcaption><p>A USB and a small screwdriver</p></figcaption></figure>
 
 ### Unbox All the Things
 
 #### The Intel NUC
 
-<figure><img src=".gitbook/assets/IMG_4497 Large.png" alt=""><figcaption><p>This is everything included in the box</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4497 Large.jpeg" alt=""><figcaption><p>This is everything included in the box</p></figcaption></figure>
 
 Starting with the Intel NUC, let's go over everything included in the box (ignoring the actual box 😉):
 
@@ -46,11 +46,11 @@ Starting with the Intel NUC, let's go over everything included in the box (ignor
 
 For this guide you can ignore everything but the NUC and the power supply:
 
-<figure><img src=".gitbook/assets/IMG_4499 Large.png" alt=""><figcaption><p>Our Intel NUC and our power supply</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4499 Large.jpeg" alt=""><figcaption><p>Our Intel NUC and our power supply</p></figcaption></figure>
 
 #### The RAM
 
-<figure><img src=".gitbook/assets/IMG_4500 Large.png" alt=""><figcaption><p>Our RAM (a.k.a. memory)</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4500 Large.jpeg" alt=""><figcaption><p>Our RAM (a.k.a. memory)</p></figcaption></figure>
 
 Your exact RAM packaging may differ, but this one is pretty nonsense and only contains two RAM sticks
 
@@ -58,15 +58,15 @@ Your exact RAM packaging may differ, but this one is pretty nonsense and only co
 You may only have a single RAM stick and that's fine. Pictured below are two 16 GB sticks of RAM, but they come in various configurations e.g. one stick that's 32 GB, one stick that's 64 GB, etc.
 {% endhint %}
 
-<figure><img src=".gitbook/assets/IMG_4501 Large.png" alt=""><figcaption><p>Two 16 GB sticks of RAM</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4501 Large.jpeg" alt=""><figcaption><p>Two 16 GB sticks of RAM</p></figcaption></figure>
 
 #### The SSD
 
-<figure><img src=".gitbook/assets/IMG_4502 Large.png" alt=""><figcaption><p>Our NVME SSD</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4502 Large.jpeg" alt=""><figcaption><p>Our NVME SSD</p></figcaption></figure>
 
 Your SSD packaging may also differ, but it's probably going to contain the same as pictured below:
 
-<figure><img src=".gitbook/assets/IMG_4503 Large.png" alt=""><figcaption><p>Our opened NVME SSD</p></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption><p>Our opened NVME SSD</p></figcaption></figure>
 
 Included in the box is:
 
@@ -75,7 +75,7 @@ Included in the box is:
 
 #### All the Unboxed Things
 
-<figure><img src=".gitbook/assets/IMG_4504 Large.png" alt=""><figcaption><p>All of our unboxed components: NVME SSD, two sticks of RAM, the Intel NUC, and it's power supply</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4504 Large.jpeg" alt=""><figcaption><p>All of our unboxed components: NVME SSD, two sticks of RAM, the Intel NUC, and it's power supply</p></figcaption></figure>
 
 ### Assemble All the Things
 
@@ -87,7 +87,7 @@ The first step in assembling our node is to unscrew the bottom cover of the NUC.
 **Note:** The four screw are _captured,_ meaning they're not going to come out of their holes no matter how much you unscrew them. When they become loose and you can move the screw up and down, that's how you'll know it's completely unscrewed
 {% endhint %}
 
-<figure><img src=".gitbook/assets/IMG_4505 Large.png" alt=""><figcaption><p>Unscrew the four highlighted screws to remove the bottom cover of the NUC</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4505 Large.jpeg" alt=""><figcaption><p>Unscrew the four highlighted screws to remove the bottom cover of the NUC</p></figcaption></figure>
 
 {% hint style="info" %}
 **Note:** We're going to remove the bottom cover of the NUC, but **be careful** when you do so because there is a _ribbon cable_ attached to the bottom cover (see the below image to see what this ribbon cable looks like) that you don't want to accidentally rip apart if you remove the bottom cover a bit too vigorously 💪&#x20;
@@ -97,11 +97,11 @@ The first time you remove this bottom cover, it might be _a bit_ stiff so it mig
 
 Next we're going to open up the NUC by removing the bottom cover. To do so, hold onto the NUC with one hand and pull up using one of the screw with the other hand. Once you seperate the bottom cover from the rest of the NUC, carefully place it off to the side like so:
 
-<figure><img src=".gitbook/assets/IMG_4506 Large.png" alt=""><figcaption><p>An opened up NUC</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4506 Large.jpeg" alt=""><figcaption><p>An opened up NUC</p></figcaption></figure>
 
 #### Installing the RAM
 
-<figure><img src=".gitbook/assets/IMG_4507 Large.png" alt=""><figcaption><p>The RAM slots highlighted by a red rectangle</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4507 Large.jpeg" alt=""><figcaption><p>The RAM slots highlighted by a red rectangle</p></figcaption></figure>
 
 Highlighted in the above image are the slots we're going to insert our RAM into. This part is going to _feel_ like you're going to break something, but it does require _a little bit_ of effort to full push the RAM into it's slot. You're also going to be inserting the RAM at a _slight_ angle and then you'll push it down into the silver bracket (highlighted in the below image) that'll hold the stick of RAM on it's sides
 
@@ -109,27 +109,27 @@ Insert the **gold side** of the first stick (or your only stick if you only have
 
 Once you've inserted the stick of RAM, it'll look like:
 
-<figure><img src=".gitbook/assets/IMG_4508 Large.png" alt=""><figcaption><p>The first slotted stick of RAM, highlighted is the bracket that holds the stick of RAM by it's sides</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4508 Large.jpeg" alt=""><figcaption><p>The first slotted stick of RAM, highlighted is the bracket that holds the stick of RAM by it's sides</p></figcaption></figure>
 
 If you have a second stick of RAM, insert it in the top slot same as you did the first one (also making sure to push down slightly on the stick to push in into the bracket):
 
-<figure><img src=".gitbook/assets/IMG_4509 Large.png" alt=""><figcaption><p>The second stick of RAM slotted into it's place</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4509 Large.jpeg" alt=""><figcaption><p>The second stick of RAM slotted into it's place</p></figcaption></figure>
 
 #### Installing the SSD
 
-<figure><img src=".gitbook/assets/IMG_4510 Large.png" alt=""><figcaption><p>The SSD slot highlighted by a red rectangle</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4510 Large.jpeg" alt=""><figcaption><p>The SSD slot highlighted by a red rectangle</p></figcaption></figure>
 
 Next, and the last step before we close up the NUC, we're installing our SSD. To do so, there's a small screw we need to remove first - I've highlighted the screw in the above image, please completely unscrew it and set it off to the side
 
 After completely removing the screw, insert your SSD **gold side** first into it's slot. Like the RAM, there's a small gap in the **gold side** that aligns with a solid piece in the slot. Please make sure you're lining up the gap with the solid piece before trying to insert the SSD
 
-<figure><img src=".gitbook/assets/IMG_4511 Large.png" alt=""><figcaption><p>The SSD inserted into it's slot</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4511 Large.jpeg" alt=""><figcaption><p>The SSD inserted into it's slot</p></figcaption></figure>
 
 As you can see in the above picture, the SSD is going to be at a weird angle after inserting and that's completely fine. The tiny screw we removed is going to hold down the SSD
 
 Please reinsert the tiny screw into it's hole, making sure it's holding down the SSD by the **gold half circle** that lines up with the screw hole. After reinserting the screw, it should look like:
 
-<figure><img src=".gitbook/assets/IMG_4512 Large.png" alt=""><figcaption><p>A NUC with the RAM and SSD slotted into their places</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4512 Large.jpeg" alt=""><figcaption><p>A NUC with the RAM and SSD slotted into their places</p></figcaption></figure>
 
 #### Batten Down the Hatches
 
