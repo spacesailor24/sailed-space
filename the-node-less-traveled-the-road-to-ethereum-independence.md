@@ -284,3 +284,139 @@ When the flashing process reaches 100%, Etcher will begin to validate the ISO wa
 When you see this screen, you have successfully flashed the Ubuntu Server ISO onto your USB :tada::
 
 <figure><img src=".gitbook/assets/etcher-flash-completed.png" alt=""><figcaption><p>Successful flashing of the USB</p></figcaption></figure>
+
+### Installing the OS
+
+At this point we've assembled the hardware and flashed Ubuntu Server onto our USB. Now we're going to install Ubuntu Server onto our NUC. So go ahead and plug your HDMI cable into the back of your display and connect the HDMI cable, your keyboard, and the USB to the NUC. At this point we're ready to plug in the power supply and power on the NUC by pressing the power button on the front
+
+It may take a second, but with your USB plugged into the NUC, you NUC connected to your display, and both the NUC and your display powered on, you should see:
+
+<figure><img src=".gitbook/assets/grub-selection.png" alt=""><figcaption><p>The Ubuntu Grub installer</p></figcaption></figure>
+
+Go ahead and press `Enter` on your keyboard to select `Try or Install Ubuntu Server`
+
+Eventually you'll see this screen, go ahead and select the language you're comfortable using (you can move the green selection bar up and down using the `up` and `down` arrow keys on your keyboard) by pressing the `Enter` key:
+
+<figure><img src=".gitbook/assets/language-selection.png" alt=""><figcaption><p>Ubuntu language selection</p></figcaption></figure>
+
+If you see something similar to the following screen, go ahead and select `Update to the new installer`:
+
+<figure><img src=".gitbook/assets/installer-update.png" alt=""><figcaption><p>Ubuntu installer updater</p></figcaption></figure>
+
+Next is the `Keyboard configuration` screen, press `Enter` to select `Done`:
+
+<figure><img src=".gitbook/assets/keyboard-config.png" alt=""><figcaption><p>Keyboard configuration</p></figcaption></figure>
+
+On this next screen, we're going to press the `up` arrow on your keyboard to highlight the bottom box for `Search for third-party drivers`:
+
+<figure><img src=".gitbook/assets/search-for-third-party-drivers.png" alt=""><figcaption><p>Selecting <code>Search for third-party drivers</code></p></figcaption></figure>
+
+To select, press the `space bar` your screen should look like:
+
+<figure><img src=".gitbook/assets/selected-third-part-drivers.png" alt=""><figcaption><p>Selected <code>Search for third-party drivers</code></p></figcaption></figure>
+
+Press the `down` arrow on your keyboard to re-highlight `Done`, and then press `Enter` to select it:
+
+<figure><img src=".gitbook/assets/type-of-install-ready.png" alt=""><figcaption><p>Type of install <code>Done</code></p></figcaption></figure>
+
+Next is the `Network connections` screen, this is where we connect our NUC to the internet. I'm not 100% sure what'll see if your NUC is connected to the internet via ethernet cable, but your NUC should also have a built-in WiFi antenna, so for this guide, that's how we'll connect your NUC to the internet
+
+Your view of this screen may be slightly different, but the process of connecting to WiFi using should be the same. We're going to select the NUC's WiFi antenna (the line with `wlan)`  by pressing `up` twice to highlight the antenna like so:
+
+<figure><img src=".gitbook/assets/wifi-highlighted.jpeg" alt=""><figcaption><p>Our wifi antenna highlighted</p></figcaption></figure>
+
+Then press `space bar` to open this menu:
+
+<figure><img src=".gitbook/assets/open-wifi-config.jpeg" alt=""><figcaption><p>Opened WiFi config menu</p></figcaption></figure>
+
+Press `down` twice to highlight `Edit Wifi` andpress `space bar`:
+
+<figure><img src=".gitbook/assets/edit-wifi.jpeg" alt=""><figcaption><p>Edit Wifi highlighted</p></figcaption></figure>
+
+You should see:
+
+<figure><img src=".gitbook/assets/network-info-empty.jpeg" alt=""><figcaption><p>Empty WiFi config</p></figcaption></figure>
+
+Now you can either type in the name of your network if you know what it is, or you can `down` to highlight `Choose a visible network`, press `space bar` to open the menu, press `down` until you get to your network, then press `space bar` to select it. Afterwards, press `down` three types to highlight the `Password` input field and type in your network password. Your screen should look similar to:
+
+<figure><img src=".gitbook/assets/network-info-filled.jpeg" alt=""><figcaption><p>Filled in WiFi config</p></figcaption></figure>
+
+Press `down` to highlight `Save` and press `space bar`. Give your NUC some time to connect to your WiFi to verify everything you entered your password correctly. Once your NUC is connected to WiFi, you screen should look similar to:
+
+<figure><img src=".gitbook/assets/connected-wifi.jpeg" alt=""><figcaption><p>WiFi connected</p></figcaption></figure>
+
+Press `down` twice to select `Done` and press `space bar` to move onto the next screen. This next screen is to configure a proxy, if you don't know what that is, you probably don't need to do it, so you can just press `space bar` to move on:
+
+<figure><img src=".gitbook/assets/proxy-config.png" alt=""><figcaption><p>Configure a proxy</p></figcaption></figure>
+
+&#x20;On the next screen, your NUC is automatically going to test that it can connect to the Ubuntu mirror servers to be able to install software. Let it do it's thing, and when it's done you should see `This mirror location passed tests.` like so:
+
+<figure><img src=".gitbook/assets/ubuntu-mirror-config.png" alt=""><figcaption><p>Passed Ubuntu mirror connection test</p></figcaption></figure>
+
+Go ahead and press `space bar` to move onto the next screen. If you didn't see it before, you may see the `Installer update` screen mentioned above when we started installing Ubuntu. If you do, just select `Update to the new installer`
+
+Now you should see the `Guided storage configuration screen`:
+
+<figure><img src=".gitbook/assets/guided-storage-config.png" alt=""><figcaption><p>Guided storage configuration</p></figcaption></figure>
+
+Everything we need selected, should already selected, but verify `Use an entire disk` is selected, and `Set up this disk as an LVM group`. Then press `down`5 times to highlight `Done` and press `space bar`
+
+Next you'll see a summary of how the operating system is going to install itself onto our SSD:
+
+<figure><img src=".gitbook/assets/storage-config-confirmation.png" alt=""><figcaption><p>Storage configuration summary</p></figcaption></figure>
+
+&#x20;We don't need to change anything here, so go ahead and press `space bar` to continue on. A popup will appear asking you to confirm you'd like to perform a destructive action:
+
+<figure><img src=".gitbook/assets/confirm-destructive-action.png" alt=""><figcaption><p>Confirm destructive action popup</p></figcaption></figure>
+
+This popup is just telling us that we're about to completely erase all data on our SSD, which is fine because the SSD is empty. Press `down` to highlight `Continue` and press `space bar` to confirm.
+
+This next screen is where we setup our user profile:
+
+<figure><img src=".gitbook/assets/profile-setup.png" alt=""><figcaption><p>Profile setup</p></figcaption></figure>
+
+Enter whatever your prefer for the `Your name` section. For `Your server's name` this should be something recognizable like `ethnode` or whatever you prefer, because this is the name that'll show up when you look at what devices are connected to your WiFi router. Enter whatever you'd like in `Pick a username`, but I recommend keeping it short so it's easier to type when we login to the NUC. Lastly, set whatever you like for the password, but it should be sufficiently secure (12 or more characters with some symbols and numbers). When you're all done, press `down` to highlight `Done` and press `space bar` to continue
+
+Next you'll be asked if you'd like Ubuntu Pro security updates, I'm pretty sure this is a paid service and we'll be managing updates ourselves anyways, so just press `space bar` to continue:
+
+<figure><img src=".gitbook/assets/upgrade-to-pro.png" alt=""><figcaption><p>Upgrade to Ubuntu Pro</p></figcaption></figure>
+
+Now you'll be asked to set up SSH, press `space bar` to select `Install OpenSSH server` like so:
+
+<figure><img src=".gitbook/assets/install-ssh-server.png" alt=""><figcaption><p>Install SSH server</p></figcaption></figure>
+
+Then press `down` twice to highlight `Done` and press `space bar` to continue. If you see this next screen, just press `space bar` to continue:
+
+<figure><img src=".gitbook/assets/no-third-party-drivers.png" alt=""><figcaption><p>No third-party drivers</p></figcaption></figure>
+
+Next Ubuntu is asking if we want to pre-install any other software on our node, right now we don't, so just press `down` until `Done` is highlighted, and press `space bar` to continue:
+
+<figure><img src=".gitbook/assets/featured-server-snaps.png" alt=""><figcaption><p>Install snaps</p></figcaption></figure>
+
+On this screen Ubuntu is finalizing the installation process:&#x20;
+
+<figure><img src=".gitbook/assets/ubuntu-install-complete.png" alt=""><figcaption><p>Ubuntu finishing install</p></figcaption></figure>
+
+When the last item on the screen changes from `Cancel update and reboot` to `Reboot Now`, Ubuntu is finished installing:
+
+<figure><img src=".gitbook/assets/ubuntu-install-finished.png" alt=""><figcaption><p>Ubuntu installation complete</p></figcaption></figure>
+
+Press `down` twice to select `Reboot Now`, then press `space bar` to reboot. Next you'll see the last screen of the installation process:
+
+<figure><img src=".gitbook/assets/remove-installation-media.png" alt=""><figcaption><p>Remove media installation</p></figcaption></figure>
+
+The screen is telling us to unplug our USB from the NUC, so that when the NUC reboots we don't go back into the installation menu. So just unplug the USB from the NUC and press `enter`
+
+The NUC will reboot itself and it may a take a while, but eventually you should see:
+
+<figure><img src=".gitbook/assets/first-log-in.png" alt=""><figcaption><p>First Ubuntu log in</p></figcaption></figure>
+
+You don't really need to worry about any of the info on the screen right, however, everything in the section labeled `BEGIN SSH HOST KEY KEYS` should **not** be shared with anyone as this info can be used to remotely access you intel NUC. To clear all this info from your screen, press and hold the `control` key and press `c`. This should clear your console like so:
+
+<figure><img src=".gitbook/assets/clear-log-in-console.png" alt=""><figcaption><p>Cleared console</p></figcaption></figure>
+
+Type in the username you configured, press `enter`, type in your password, then press `enter`. You should have logged into your NUC and see:
+
+<figure><img src=".gitbook/assets/logged-in.png" alt=""><figcaption><p>Logged into our NUC</p></figcaption></figure>
+
+Congratulations :tada:You've successfully installed Ubuntu Server onto your NUC and logged in successfully!
