@@ -1,6 +1,20 @@
 ---
 cover: .gitbook/assets/road.jpeg
-coverY: 158
+coverY: -9.967999999999996
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # 🛣 The Node Less Traveled By: The Road to Ethereum Independence
