@@ -179,7 +179,7 @@ It's also okay if the version number when you download Ubuntu Server is differen
 
 <figure><img src=".gitbook/assets/ubuntu-download.png" alt=""><figcaption><p>The Ubuntu Server download page</p></figcaption></figure>
 
-If you haven't already, go ahead and click the big green button to download the Ubuntu Service ISO (it may take a while to download)
+If you haven't already, go ahead and click the big green button to download the Ubuntu Server ISO (it may take a while to download)
 
 ### Flashing Our USB
 
@@ -199,7 +199,7 @@ After clicking the download button if you see the below screen:
 
 Go ahead and click the `Download` link that corresponds to the operating system of the computer you're currently using. If you're using Windows, it'll be the very first `Download`, if you're using MacOS it'll be the 4th from the top, and for Linux the 2nd to last
 
-Depending on your OS, installing Etcher is going to look a little different. I'm writing this guide on a macbook, so below is the installation process for MacOS, but regardless the installtion process should be pretty similar
+Depending on your OS, installing Etcher is going to look a little different. I'm writing this guide on a macbook, so below is the installation process for MacOS, but regardless the installation process should be pretty similar
 
 #### Installing Etcher on MacOS
 
@@ -215,7 +215,7 @@ Next, launch the balenaEtcher app by opening up `Spotlight search` by pressing a
 
 If you see the following pop-up, click `Open`:
 
-<figure><img src=".gitbook/assets/security-warning-etcher.png" alt=""><figcaption><p>MacOs secuirty warning</p></figcaption></figure>
+<figure><img src=".gitbook/assets/security-warning-etcher.png" alt=""><figcaption><p>MacOs security warning</p></figcaption></figure>
 
 #### The Balena Etcher App
 
@@ -281,4 +281,6 @@ When the flashing process reaches 100%, Etcher will begin to validate the ISO wa
 
 <figure><img src=".gitbook/assets/etcher-validating.png" alt=""><figcaption><p>Etcher validating ISO was flashed correctly</p></figcaption></figure>
 
-When you see this screen, you have successfully flashed the Ubuntu Server ISO onto
+When you see this screen, you have successfully flashed the Ubuntu Server ISO onto your USB :tada::
+
+<figure><img src=".gitbook/assets/etcher-flash-completed.png" alt=""><figcaption><p>Successful flashing of the USB</p></figcaption></figure>
