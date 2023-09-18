@@ -21,9 +21,9 @@ layout:
 
 ## Phase 1: Hardware
 
-### Gather All the Things
-
 <figure><img src=".gitbook/assets/everything-rotated Large.jpeg" alt=""><figcaption><p>All of our boxed components</p></figcaption></figure>
+
+### Gather the Things
 
 Pictured above are the hardware components needed to setup our node:
 
@@ -41,13 +41,9 @@ It's okay if your specific components don't look like what's pictured above, the
 
 Aside from what's pictured above, we need two more items: A small screwdriver and at least a 32 GB USB
 
-{% hint style="info" %}
-**Note:** All of the data on the USB is going to be erased, please use a new USB or one that doesn't contain **any** data you care about
-{% endhint %}
-
 <figure><img src=".gitbook/assets/screwDriveAndUsb Large.jpeg" alt=""><figcaption><p>A USB and a small screwdriver</p></figcaption></figure>
 
-### Unbox All the Things
+### Unbox the Things
 
 #### The Intel NUC
 
@@ -96,7 +92,7 @@ Included in the box is:
 
 <figure><img src=".gitbook/assets/IMG_4504 Large.jpeg" alt=""><figcaption><p>All of our unboxed components: NVME SSD, two sticks of RAM, the Intel NUC, and it's power supply</p></figcaption></figure>
 
-### Assemble All the Things
+### Assemble the Things
 
 #### Opening Up the NUC
 
@@ -153,3 +149,136 @@ Please reinsert the tiny screw into it's hole, making sure it's holding down the
 #### Batten Down the Hatches
 
 Now that we've installed the RAM and the SSD, it's time to screw the bottom cover back on, completing our assembly of our node, congrats 🎉
+
+## Phase 2: Operating System
+
+Now that we've assembled the hardware, it's time to finish turning it into a computer by installing an operating system (sometimes abbreviated as OS). As is, if you purchased the barebones model, your NUC doesn't have an operating system. If you're unfamiliar with the term, the operating system is what you're most likely heard as "Windows", "MacOS", or maybe you've even heard of "Linux". Your OS is what allows you to use software with your hardware, without it your NUC is just a box that doesn't do much besides turn on
+
+### Gather More Things
+
+To install your OS, you're going to need the following
+
+* A computer (aside from our NUC 😉)
+* A USB with at least 16 GB of space
+  * **Note:** All of the data on the USB is going to be erased, please use a new USB or one that doesn't contain **any** data you care about
+* A display to connect your NUC to
+* An HDMI cable
+* A keyboard
+
+### Downloading the OS
+
+For our NUC, we're going to be using a Linux operating system, specifically we're going to be using the Ubuntu Server [distribution](https://www.suse.com/suse-defines/definition/linux-distribution/) (for an explainer on why we're choosing Linux, please refer to [this](https://www.logicmonitor.com/blog/9-reasons-linux-is-a-popular-choice-for-servers), or feel free to search "Why use Linux for servers")
+
+Because Linux is open source software, it's actually free to download and free to use :tada: We're going to download a file called an [ISO](https://www.geeksforgeeks.org/iso-full-form/) from the official Ubuntu website's [download page](https://ubuntu.com/download/server):
+
+{% hint style="info" %}
+Depending on when you are viewing this guide, the Ubuntu download page make look different from what's pictured below, regardless, there should be a big download button somewhere\
+\
+It's also okay if the version number when you download Ubuntu Server is different from what's shown below (version `22.04.3`)
+{% endhint %}
+
+<figure><img src=".gitbook/assets/ubuntu-download.png" alt=""><figcaption><p>The Ubuntu Server download page</p></figcaption></figure>
+
+If you haven't already, go ahead and click the big green button to download the Ubuntu Service ISO (it may take a while to download)
+
+### Flashing Our USB
+
+In order to install the operating system onto our NUC, we're going to need a way to install the Ubuntu Server ISO you just downloaded onto our NUC - this is where that USB comes in
+
+Now just transferring the Ubuntu Server ISO file onto the USB isn't enough, we need to _flash_ the ISO onto the USB so that when we plug it into our NUC, it can recognize it as an operating system it can run on it's hardware
+
+#### Installing Etcher
+
+To do this, we're going to download a program called [balenaEtcher](https://etcher.balena.io/#download-etcher), another free piece of useful software. Once again, go ahead and click the big green button to download it
+
+<figure><img src=".gitbook/assets/balena-etcher.png" alt=""><figcaption><p>The balenaEtcher download page</p></figcaption></figure>
+
+After clicking the download button if you see the below screen:
+
+<figure><img src=".gitbook/assets/downloadEtcher.png" alt=""><figcaption><p>The download section for Etcher</p></figcaption></figure>
+
+Go ahead and click the `Download` link that corresponds to the operating system of the computer you're currently using. If you're using Windows, it'll be the very first `Download`, if you're using MacOS it'll be the 4th from the top, and for Linux the 2nd to last
+
+Depending on your OS, installing Etcher is going to look a little different. I'm writing this guide on a macbook, so below is the installation process for MacOS, but regardless the installtion process should be pretty similar
+
+#### Installing Etcher on MacOS
+
+When you clicked the `Download` button for Etcher, you downloaded a `.dmg` file. You've probably already gone through the process of installing apps downloaded from the web on your Mac already, but just incase you haven't, double click the downloaded file and you should see the screen:
+
+<figure><img src=".gitbook/assets/etcher-installer.png" alt=""><figcaption><p>The balenaEtcher installer</p></figcaption></figure>
+
+Then click on the balenaEtcher app and drag it into the `Applications` folder as depicted by the arrow, then you can close this screen
+
+Next, launch the balenaEtcher app by opening up `Spotlight search` by pressing and holding the `⌘` key on your keyboard and the `Space bar`. Then type in `etcher` like so and press the `return` key to launch the app:
+
+<figure><img src=".gitbook/assets/spotlight-search-etcher.png" alt=""><figcaption><p>Spolight search for Etcher</p></figcaption></figure>
+
+If you see the following pop-up, click `Open`:
+
+<figure><img src=".gitbook/assets/security-warning-etcher.png" alt=""><figcaption><p>MacOs secuirty warning</p></figcaption></figure>
+
+#### The Balena Etcher App
+
+Regardless of your OS, you should after installing Etcher and opening the app, you should something similar to:
+
+<figure><img src=".gitbook/assets/balena-etcher-app.png" alt=""><figcaption><p>The Balena Etcher app</p></figcaption></figure>
+
+Now we're going to _flash_ our downloaded ISO file onto our USB by clicking the blue `Flash from file` button. Upon clicking, your OS's file picker should popup:
+
+<figure><img src=".gitbook/assets/etcher-file-picker.png" alt=""><figcaption></figcaption></figure>
+
+Go ahead and navigate to where you downloaded the Ubuntu Server ISO file (mostly likely this will be your OS's `Downloads` folder), click the ISO file, and click the `open` button in the bottom right. Afterwards you should see the `Select Target` button turn to blue:
+
+<figure><img src=".gitbook/assets/etcher-select-target.png" alt=""><figcaption><p>Etcher select target</p></figcaption></figure>
+
+Before continuing, plug in the USB you want flash the OS onto into your computer. Afterwards, click the blue `Select target` button and you should see a screen similar to:
+
+<figure><img src=".gitbook/assets/etcher-target-picker.png" alt=""><figcaption><p>Etcher target picker</p></figcaption></figure>
+
+{% hint style="danger" %}
+It is **very** important you take your time to verify you're selecting the USB you intended to **completely erase all data on** to flash the OS on this screen. Even if you only see one device listed (as pictured above), try unplugging the USB from your computer and verify the device disappears from the selection screen, then plug the device back in and verify the device that reappears is the USB you intend on using
+{% endhint %}
+
+<figure><img src=".gitbook/assets/etcher-target-picker-empty.png" alt=""><figcaption><p>An empty target picker because I unplugged my USB</p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/etcher-target-picker.png" alt=""><figcaption><p>My USB reappearing in the target picker after plugging it back in</p></figcaption></figure>
+
+Once you're 100% sure you know which target on this screen is the USB you'd like to use, go ahead and select it:
+
+<figure><img src=".gitbook/assets/etcher-target-selected.png" alt=""><figcaption><p>Etcher with the USB selected</p></figcaption></figure>
+
+Then click the blue `Select 1` button and you should see:
+
+<figure><img src=".gitbook/assets/etcher-ready-to-flash.png" alt=""><figcaption><p>Etcher ready to flash our USB</p></figcaption></figure>
+
+{% hint style="danger" %}
+Before clicking the blue `Flash!` button, be 100% sure you're ready to **erase all the data on your USB**. Once you click the blue `Flash!`button, all of the data on the USB will be permanetly erased
+{% endhint %}
+
+Once you're ready, click the blue `Flash!`button to begin flashing the Ubuntu Server ISO onto your USB
+
+#### If you're on MacOS, you may see the following popups:
+
+This first one is just MacOS asking you to verify you want to give balenaEtcher access to write to your USB. Enter your password and click the `Ok` button
+
+<figure><img src=".gitbook/assets/enter-password.png" alt=""><figcaption><p>balenaEtcher asking for permission to write to your USB</p></figcaption></figure>
+
+The next popup is also confirming you want to give balenaEtcher access to write to your USB. Click the `OK` button
+
+<figure><img src=".gitbook/assets/etcher-wants-access.png" alt=""><figcaption><p>balenaEtcher asking for permission to access your USB</p></figcaption></figure>
+
+{% hint style="warning" %}
+You _may_ see the following scren if you're using a USB with a lot of storage. If you sure you want to erase everything on your USB, click the `Yes, I'm sure` text to continue
+{% endhint %}
+
+<figure><img src=".gitbook/assets/etcher-large-drive-warning.png" alt=""><figcaption><p>Etcher larger target confirmation</p></figcaption></figure>
+
+You should see Etcher begin to flash the ISO onto your USB:
+
+<figure><img src=".gitbook/assets/etcher-flashing.png" alt=""><figcaption><p>Etcher flashing ISO onto USB</p></figcaption></figure>
+
+When the flashing process reaches 100%, Etcher will begin to validate the ISO was flashed correctly onto your USB:
+
+<figure><img src=".gitbook/assets/etcher-validating.png" alt=""><figcaption><p>Etcher validating ISO was flashed correctly</p></figcaption></figure>
+
+When you see this screen, you have successfully flashed the Ubuntu Server ISO onto
