@@ -1,3 +1,8 @@
+---
+cover: .gitbook/assets/road.jpeg
+coverY: 158
+---
+
 # 🛣 The Node Less Traveled By: The Road to Ethereum Independence
 
 ## Phase 1: Hardware

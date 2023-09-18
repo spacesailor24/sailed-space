@@ -1,6 +1,6 @@
 ---
 cover: .gitbook/assets/message-bottle Large.jpeg
-coverY: 0
+coverY: -107.86025049439685
 ---
 
 # 📄 The Solidity Events Guide I Wish I Had
