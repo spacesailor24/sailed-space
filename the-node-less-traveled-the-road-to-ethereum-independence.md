@@ -81,7 +81,7 @@ You may only have a single RAM stick and that's fine. Pictured below are two 16 
 
 Your SSD packaging may also differ, but it's probably going to contain the same as pictured below:
 
-<figure><img src="broken-reference" alt=""><figcaption><p>Our opened NVME SSD</p></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_4503 Large.jpeg" alt=""><figcaption><p>Our opened NVME SSD</p></figcaption></figure>
 
 Included in the box is:
 
